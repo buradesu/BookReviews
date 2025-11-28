@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <script th:src="@{/bookReviewScript.js}"></script>
 </head>
 <body>
-<a href="/addbook"></a>
-<ol th:each="book : ${books}">
-    <li><a href="#">"*{title}"</a></li>
+<a href="/addbook">Add Book</a>
+<ol th:each="book : ${books}" th:object="${book}">
+    <li>
+        <a href="#" th:onclick="'getBook('+${book.id}+')'" th:text="*{title}"></a>
+        <a th:href="@{/addreview/{bookId}(bookId=*{id})}">(Add Review)</a>
+    </li>
 </ol>
+<hr/><div th:id="bookdetails"></div>
+<div th:id="reviewdetails"></div>
 </body>
 </html>

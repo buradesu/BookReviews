@@ -17,5 +17,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int bookId;
-    private String review;
+    // following UML and naming this review causes a conflict with the thymeleaf form
+    // variable renamed to reviewText as a simple way to mitigate issue
+    private String reviewText;
 }

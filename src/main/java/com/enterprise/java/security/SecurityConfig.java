@@ -37,7 +37,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(auth -> auth.requestMatchers("/").permitAll() // index is not authenticated
+        http.authorizeHttpRequests(auth -> auth.requestMatchers("/", "/bookReviewScript.js").permitAll() // index is not authenticated
                         .requestMatchers("/h2-console/**").permitAll().anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults()).formLogin(Customizer.withDefaults());
         http.csrf((csrf) -> csrf.disable());
