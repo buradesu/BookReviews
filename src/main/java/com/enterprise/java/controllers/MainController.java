@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @RequestMapping("/")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("books", book)
         return "index";
     }
 
     @RequestMapping("/addbook")
-    public String addBook() {
+    public String addBook(Model model) {
         return "addbook";
     }
 

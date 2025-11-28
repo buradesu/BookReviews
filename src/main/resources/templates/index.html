@@ -5,6 +5,9 @@
     <title>Index</title>
 </head>
 <body>
-Hello World
+<a href="/addbook"></a>
+<ol th:each="book : ${books}">
+    <li><a href="#">"*{title}"</a></li>
+</ol>
 </body>
 </html>
