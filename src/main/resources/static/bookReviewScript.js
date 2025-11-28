@@ -22,6 +22,6 @@ function showReviews(data){
     reviewsList.forEach((review) => {
         reviewsDetails += "<li>" + review.reviewText + "</li>";
     });
-    reviewsDetails += "</ul>"; // Don't forget to close the tag!
+    reviewsDetails += "</ul>";
     document.getElementById("reviewdetails").innerHTML = reviewsDetails;
 }
